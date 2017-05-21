@@ -60,7 +60,7 @@ class _X(object):
     def __apply_rbin_func(self, func, arg ):
         return type(self)(func, self.__arg_wrapper(arg), _Partial(self))
     def __apply_multargs_func(self, func, *args ):
-        return type(self)(func, _Partial(self), *map(_Return,args))
+        return type(self)(func, _Partial(self), *list(map(_Return,args)))
 
     def __call__(self, *args):
         for arg in args:
